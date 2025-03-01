@@ -30,6 +30,14 @@ export function SiteFooter() {
           >
             Contact
           </Link>
+          <Link
+            href="https://github.com/lalanguearabe/lalanguearabe.com"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </Link>
         </div>
       </div>
     </footer>
