@@ -116,7 +116,6 @@ export default function CoursePage({ params }: CoursePageProps) {
                     <SoundQuiz 
                       title={`${sound.title || "Sound"} - Arabe vers Français`} 
                       sounds={sound.sounds}
-                      direction="ar-to-fr"
                     />
                   </div>
                 </div>
