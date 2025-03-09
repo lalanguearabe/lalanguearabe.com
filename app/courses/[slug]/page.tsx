@@ -2,15 +2,17 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllCourseSlugs, getCourseBySlug } from "@/lib/courses";
 import { getVocabularyBySlug } from "@/lib/vocabulary";
+import { getSoundBySlug } from "@/lib/sound";
 import { CourseContent } from "@/components/course-content";
 import { QuizSection } from "@/components/quiz-section";
-import { VocabularyQuiz } from "@/components/vocabulary-quiz";
+import { VocabularyQuiz } from "@/components/quiz/vocabulary-quiz";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SoundQuiz } from "@/components/quiz/sound-quiz";
 
 interface CoursePageProps {
   params: {
@@ -42,6 +44,7 @@ export default function CoursePage({ params }: CoursePageProps) {
   try {
     const course = getCourseBySlug(params.slug);
     const vocabulary = getVocabularyBySlug(params.slug);
+    const sound = getSoundBySlug(params.slug);
     const formattedDate = format(new Date(course.date), "d MMMM yyyy", { locale: fr });
 
     return (
@@ -106,6 +109,13 @@ export default function CoursePage({ params }: CoursePageProps) {
                     <VocabularyQuiz 
                       title={`${vocabulary.title || "Vocabulaire"} - Arabe vers Français`} 
                       words={vocabulary.words}
+                      direction="ar-to-fr"
+                    />
+                  </div>
+                  <div className="mt-8">
+                    <SoundQuiz 
+                      title={`${sound.title || "Sound"} - Arabe vers Français`} 
+                      sounds={sound.sounds}
                       direction="ar-to-fr"
                     />
                   </div>

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { VocabularyWord } from '@/components/vocabulary-quiz';
+import { VocabularyWord } from '@/components/quiz/vocabulary-quiz';
 
 const vocabularyDirectory = path.join(process.cwd(), 'content/vocabulary');
 
