@@ -4,16 +4,12 @@ import { Inter } from 'next/font/google';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { Providers } from './providers';
-
+import { getMetadata } from '@/lib/metadata';
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: ' lalanguearabe.com - Plateforme d\'apprentissage de l\'arabe',
-  description: 'Découvrez notre méthode progressive d\'apprentissage de l\'arabe',
-  icons: [
-    { rel: 'icon', url: '/favicon.ico' }
-  ]
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadata({locale: 'fr'});
+}
 
 export default function RootLayout({
   children,

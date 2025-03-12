@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   try {
     const course = getCourseBySlug(params.slug);
     return {
-      title: `${course.title} |  lalanguearabe.com`,
+      title: `${course.title}`,
       description: course.description,
     };
   } catch (error) {
     return {
-      title: "Cours non trouvé |  lalanguearabe.com",
+      title: "Cours non trouvé ",
       description: "Le cours que vous recherchez n'existe pas",
     };
   }

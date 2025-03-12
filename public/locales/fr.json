@@ -1,0 +1,67 @@
+{
+    "HEADER": {
+        "SITE_NAME": "lalanguearabe.com",
+        "COURSES": "Cours",
+        "ABOUT": "À propos",
+        "CONTACT": "Contact"
+    },
+    "FOOTER": {
+        "SITE_NAME": "lalanguearabe.com",
+        "COURSES": "Cours",
+        "ABOUT": "À propos",
+        "CONTACT": "Contact",
+        "COPYRIGHT": "lalanguearabe.com. Tous droits réservés.",
+        "GITHUB_LINK": "https://github.com/lalanguearabe/lalanguearabe.com"
+    },
+    "MAIN": {
+        "HERO": {
+            "TITLE": "Apprenez l'arabe à votre rythme avec lalanguearabe.com",
+            "DESCRIPTION": "Découvrez notre méthode progressive d'apprentissage de l'arabe.",
+            "CTA": "Voir tous les cours"
+        },
+        "COURSES": {
+            "TITLE": "Nos cours",
+            "DESCRIPTION": "Découvrez nos cours pour tous les niveaux.",
+            "CTA": "Voir tous les cours"
+        },
+        "WHY_CHOOSE_US": {
+            "TITLE": "Pourquoi choisir notre méthode ?",
+            "DESCRIPTION": "Notre approche d'apprentissage de l'arabe est entièrement gratuite et conçue pour rendre cette langue accessible au plus grand nombre.",
+            "FEATURES": {
+                "NATURAL_PROGRESSION": "Progression naturelle",
+                "NATURAL_PROGRESSION_DESCRIPTION": "Notre méthode suit une progression naturelle qui respecte la façon dont les langues sont naturellement acquises.",
+                "STRUCTURED_PROGRAM": "Programme structuré",
+                "STRUCTURED_PROGRAM_DESCRIPTION": "Notre programme est soigneusement structuré pour garantir une progression cohérente et efficace.",
+                "COLLABORATIVE_PROJECT": "Gratuit et collaboratif",
+                "COLLABORATIVE_PROJECT_DESCRIPTION": "Ce projet est 100% gratuit et le fruit d'une collaboration communautaire ouverte. Tout le monde peut contribuer à démocratiser l'apprentissage de l'arabe."
+            }
+        }
+    },
+    "COURSES": {
+        "TITLE": "Tous les cours",
+        "DESCRIPTION": "Découvrez tous nos cours d'arabe disponibles sur lalanguearabe.com"
+    },
+    "CONTACT": {
+        "TITLE": "Contactez-nous",
+        "DESCRIPTION": "Nous aimerions avoir votre avis sur nos cours. Envoyez-nous un message et nous vous reviendrons dès que possible.",
+        "FORM": {
+            "NAME": "Nom",
+            "EMAIL": "Email",
+            "MESSAGE": "Message",
+            "SUBMIT": "Envoyer",
+            "EMAIL_PLACEHOLDER": "Entrez votre email",
+            "MESSAGE_PLACEHOLDER": "Entrez votre message",
+            "NAME_PLACEHOLDER": "Entrez votre nom"
+        },
+        "DIRECT_EMAIL": "Ou envoyez-nous un email directement à"
+    },
+    "NOT_FOUND": {
+        "TITLE": "Page non trouvée",
+        "DESCRIPTION": "Désolé, la page que vous recherchez n'existe pas.",
+        "CTA": "Retour à l'accueil"
+    },
+    "META": {
+        "TITLE": "lalanguearabe.com - Plateforme d'apprentissage de l'arabe",
+        "DESCRIPTION": "Découvrez notre méthode progressive d'apprentissage de l'arabe."
+    }
+}
