@@ -3,16 +3,12 @@ import { notFound } from "next/navigation";
 import { getAllCourseSlugs, getCourseBySlug } from "@/lib/courses";
 import { getVocabularyBySlug } from "@/lib/vocabulary";
 import { getSoundBySlug } from "@/lib/sound";
-import { CourseContent } from "@/components/course-content";
-import { QuizSection } from "@/components/quiz-section";
-import { VocabularyQuiz } from "@/components/quiz/vocabulary-quiz";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import Image from "next/image";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SoundQuiz } from "@/components/quiz/sound-quiz";
+import { ClientCourseTabs } from "@/components/client-course-tabs";
 
 interface CoursePageProps {
   params: {
@@ -83,62 +79,11 @@ export default function CoursePage({ params }: CoursePageProps) {
           </div>
 
           {/* Course Content with Tabs */}
-          <Tabs defaultValue="content" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="content">Contenu</TabsTrigger>
-              <TabsTrigger value="vocabulary">Vocabulaire</TabsTrigger>
-              <TabsTrigger value="quiz">Quiz</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="content" className="mt-6">
-              <div className="prose prose-lg dark:prose-invert max-w-none">
-                <CourseContent content={course.content} />
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="vocabulary" className="mt-6">
-              {vocabulary.words.length > 0 ? (
-                <div className="space-y-8">
-                  <VocabularyQuiz 
-                    title={vocabulary.title || "Vocabulaire"} 
-                    words={vocabulary.words}
-                    direction="fr-to-ar"
-                  />
-                  
-                  <div className="mt-8">
-                    <VocabularyQuiz 
-                      title={`${vocabulary.title || "Vocabulaire"} - Arabe vers Français`} 
-                      words={vocabulary.words}
-                      direction="ar-to-fr"
-                    />
-                  </div>
-                  <div className="mt-8">
-                    <SoundQuiz 
-                      title={`${sound.title || "Sound"} - Arabe vers Français`} 
-                      sounds={sound.sounds}
-                    />
-                  </div>
-                </div>
-              ) : (
-                <div className="p-6 text-center bg-muted rounded-lg">
-                  <p>Aucun vocabulaire disponible pour cette leçon.</p>
-                </div>
-              )}
-            </TabsContent>
-            
-            <TabsContent value="quiz" className="mt-6">
-              {course.quiz.questions.length > 0 ? (
-                <QuizSection 
-                  title={course.quiz.title} 
-                  questions={course.quiz.questions} 
-                />
-              ) : (
-                <div className="p-6 text-center bg-muted rounded-lg">
-                  <p>Aucun quiz disponible pour cette leçon.</p>
-                </div>
-              )}
-            </TabsContent>
-          </Tabs>
+          <ClientCourseTabs 
+            course={course} 
+            vocabulary={vocabulary} 
+            sound={sound} 
+          />
         </div>
       </article>
     );

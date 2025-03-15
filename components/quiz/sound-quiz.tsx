@@ -11,7 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SoundList } from "@/lib/types";
 import { AudioButton } from "@/components/audio-button";
-
+import { useTranslation } from "react-i18next";
 type SoundQuizProps = SoundList;
 
 interface QuizModeProps {
@@ -48,6 +48,7 @@ export function SoundQuiz({ title, sounds }: SoundQuizProps) {
 }
 
 function WritingModeQuiz({ sounds }: QuizModeProps) {
+  const { t } = useTranslation();
   const [currentSoundIndex, setCurrentSoundIndex] = useState<number>(0);
   const [userAnswer, setUserAnswer] = useState<string>("");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
@@ -112,7 +113,7 @@ function WritingModeQuiz({ sounds }: QuizModeProps) {
   };
 
   if (!currentSound) {
-    return <div>Chargement des sons...</div>;
+    return <div>{t("QUIZ.LOADING")}</div>;
   }
 
   // Always use Arabic for answer
@@ -190,29 +191,30 @@ function WritingModeQuiz({ sounds }: QuizModeProps) {
       <div className="flex justify-between pt-4">
         <Button variant="outline" onClick={handleReset}>
           <RotateCcw className="h-4 w-4 mr-2" />
-          Réinitialiser
+          {t("QUIZ.RESET")}
         </Button>
         
         {showAnswer ? (
           <Button onClick={handleNextSound}>
-            Suivant
+            {t("QUIZ.NEXT_WORD")}
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         ) : (
           <Button variant="secondary" onClick={handleShowAnswer}>
-            Voir la réponse
+            {t("QUIZ.SHOW_ANSWER")}
           </Button>
         )}
       </div>
 
       <div className="text-sm text-muted-foreground mt-2">
-        Score actuel: {score.correct}/{score.total}
+        {t("QUIZ.CURRENT_SCORE")}: {score.correct}/{score.total}
       </div>
     </div>
   );
 }
 
 function MCQModeQuiz({ sounds }: QuizModeProps) {
+  const { t } = useTranslation();
   const [currentSoundIndex, setCurrentSoundIndex] = useState<number>(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
@@ -303,13 +305,11 @@ function MCQModeQuiz({ sounds }: QuizModeProps) {
   const currentSound = shuffledSounds[currentSoundIndex];
 
   if (!currentSound || options.length < 4) {
-    return <div>Chargement des sons...</div>;
+    return <div>{t("QUIZ.LOADING")}</div>;
   }
 
   // Always use Arabic for answer since options are all in Arabic now
   const answer = currentSound.arabic;
-  // Keep the label for what the user needs to select (Arabic)
-  const answerLabel = "Arabe";
 
   return (
     <div className="space-y-4 mt-4">
@@ -380,12 +380,12 @@ function MCQModeQuiz({ sounds }: QuizModeProps) {
               <XCircle className="h-5 w-5" />
             )}
             <p className="font-medium">
-              {isCorrect ? "Correct!" : "Incorrect!"}
+              {isCorrect ? t("QUIZ.CORRECT") : t("QUIZ.INCORRECT")}
             </p>
           </div>
           {!isCorrect && (
             <p className="mt-1 flex items-center gap-2">
-              La réponse correcte est: <span className={cn("font-bold", "arabic-text")}>{answer}</span>
+              {t("QUIZ.CORRECT_ANSWER")} <span className={cn("font-bold", "arabic-text")}>{answer}</span>
             </p>
           )}
         </div>
@@ -394,12 +394,12 @@ function MCQModeQuiz({ sounds }: QuizModeProps) {
       <div className="flex justify-between pt-4">
         <Button variant="outline" onClick={handleReset}>
           <RotateCcw className="h-4 w-4 mr-2" />
-          Réinitialiser
+          {t("QUIZ.RESET")}
         </Button>
         
         {showAnswer ? (
           <Button onClick={handleNextSound}>
-            Suivant
+            {t("QUIZ.NEXT_WORD")}
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         ) : (
@@ -407,13 +407,13 @@ function MCQModeQuiz({ sounds }: QuizModeProps) {
             onClick={handleSubmit} 
             disabled={!selectedOption}
           >
-            Vérifier
+            {t("QUIZ.CHECK")}
           </Button>
         )}
       </div>
 
       <div className="text-sm text-muted-foreground mt-2">
-        Score actuel: {score.correct}/{score.total}
+        {t("QUIZ.CURRENT_SCORE")}: {score.correct}/{score.total}
       </div>
     </div>
   );

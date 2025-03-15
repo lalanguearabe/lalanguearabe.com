@@ -63,5 +63,31 @@
     "META": {
         "TITLE": "lalanguearabe.com - Plateforme d'apprentissage de l'arabe",
         "DESCRIPTION": "Découvrez notre méthode progressive d'apprentissage de l'arabe."
+    },
+    "DETAILS": {
+        "CONTENT": "Contenu",
+        "VOCABULARY": "Vocabulaire",
+        "QUIZ": "Quiz",
+        "ARABIC_TO_FRENCH": "Arabe vers Français",
+        "FRENCH_TO_ARABIC": "Français vers Arabe",
+        "SOUND": "Son",
+        "VOCABULARY_QUIZ": "Quiz de vocabulaire",
+        "SOUND_QUIZ": "Quiz de son",
+        "NO_VOCABULARY": "Aucun vocabulaire disponible pour cette leçon.",
+        "NO_QUIZ": "Aucun quiz disponible pour cette leçon."
+    },
+    "QUIZ": {
+        "WRITING_MODE": "Mode écriture",
+        "MCQ_MODE": "Mode QCM",
+        "TEST_YOUR_KNOWLEDGE": "Testez vos connaissances de vocabulaire",
+        "CORRECT": "Correct!",
+        "INCORRECT": "Incorrect!",
+        "RESET": "Réinitialiser",
+        "RESTART": "Recommencer",
+        "NEXT_WORD": "Mot suivant",
+        "SHOW_ANSWER": "Afficher la réponse",
+        "LOADING": "Chargement...",
+        "CURRENT_SCORE": "Score actuel",
+        "CORRECT_ANSWER": "La réponse correcte est:"
     }
 }

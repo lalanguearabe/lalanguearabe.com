@@ -9,6 +9,7 @@ import { CheckCircle, XCircle, RotateCcw, ArrowRight, Volume2 } from "lucide-rea
 import { cn } from "@/lib/utils";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTranslation } from "react-i18next";
 
 export interface VocabularyWord {
   french: string;
@@ -24,20 +25,20 @@ interface VocabularyQuizProps {
 
 export function VocabularyQuiz({ title, words, direction = "fr-to-ar" }: VocabularyQuizProps) {
   const [quizMode, setQuizMode] = useState<"writing" | "mcq">("writing");
-  
+  const { t } = useTranslation();
   return (
     <Card className="w-full">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>
-          Testez vos connaissances de vocabulaire
+          {t("QUIZ.TEST_YOUR_KNOWLEDGE")}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="writing" onValueChange={(value) => setQuizMode(value as "writing" | "mcq")}>
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="writing">Mode écriture</TabsTrigger>
-            <TabsTrigger value="mcq">Mode QCM</TabsTrigger>
+            <TabsTrigger value="writing">{t("QUIZ.WRITING_MODE")}</TabsTrigger>
+            <TabsTrigger value="mcq">{t("QUIZ.MCQ_MODE")}</TabsTrigger>
           </TabsList>
           <TabsContent value="writing">
             <WritingModeQuiz words={words} direction={direction} />
@@ -108,6 +109,7 @@ function AudioButton({ audioUrl, word }: { audioUrl?: string; word: string }) {
 }
 
 function WritingModeQuiz({ words, direction }: QuizModeProps) {
+  const { t } = useTranslation();
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
   const [userAnswer, setUserAnswer] = useState<string>("");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
@@ -179,10 +181,6 @@ function WritingModeQuiz({ words, direction }: QuizModeProps) {
   const questionLabel = direction === "fr-to-ar" ? "Français" : "Arabe";
   const answerLabel = direction === "fr-to-ar" ? "Arabe" : "Français";
   
-  // Déterminer quelle partie a potentiellement un fichier audio
-  const audioWord = direction === "fr-to-ar" ? currentWord.arabic : currentWord.french;
-  const audioUrl = direction === "fr-to-ar" ? currentWord.audio : undefined;
-
   return (
     <div className="space-y-4 mt-4">
       <div className="space-y-2">
@@ -235,7 +233,7 @@ function WritingModeQuiz({ words, direction }: QuizModeProps) {
               <XCircle className="h-5 w-5" />
             )}
             <p className="font-medium">
-              {isCorrect ? "Correct!" : "Incorrect!"}
+              {isCorrect ? t("QUIZ.CORRECT") : t("QUIZ.INCORRECT")}
             </p>
           </div>
           {!isCorrect && (
@@ -252,29 +250,30 @@ function WritingModeQuiz({ words, direction }: QuizModeProps) {
       <div className="flex justify-between pt-4">
         <Button variant="outline" onClick={handleReset}>
           <RotateCcw className="h-4 w-4 mr-2" />
-          Réinitialiser
+          {t("QUIZ.RESET")}
         </Button>
         
         {showAnswer ? (
           <Button onClick={handleNextWord}>
-            Suivant
+            {t("QUIZ.NEXT_WORD")}
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         ) : (
           <Button variant="secondary" onClick={handleShowAnswer}>
-            Voir la réponse
+            {t("QUIZ.SHOW_ANSWER")}
           </Button>
         )}
       </div>
 
       <div className="text-sm text-muted-foreground mt-2">
-        Score actuel: {score.correct}/{score.total}
+        {t("QUIZ.CURRENT_SCORE")}: {score.correct}/{score.total}
       </div>
     </div>
   );
 }
 
 function MCQModeQuiz({ words, direction }: QuizModeProps) {
+  const { t } = useTranslation();
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
@@ -363,7 +362,7 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
   const currentWord = shuffledWords[currentWordIndex];
 
   if (!currentWord || options.length < 4) {
-    return <div>Chargement du vocabulaire...</div>;
+    return <div>{t("QUIZ.LOADING")}</div>;
   }
 
   const question = direction === "fr-to-ar" ? currentWord.french : currentWord.arabic;
@@ -443,7 +442,7 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
               <XCircle className="h-5 w-5" />
             )}
             <p className="font-medium">
-              {isCorrect ? "Correct!" : "Incorrect!"}
+              {isCorrect ? t("QUIZ.CORRECT") : t("QUIZ.INCORRECT")}
             </p>
           </div>
           {!isCorrect && (
@@ -460,12 +459,12 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
       <div className="flex justify-between pt-4">
         <Button variant="outline" onClick={handleReset}>
           <RotateCcw className="h-4 w-4 mr-2" />
-          Réinitialiser
+          {t("QUIZ.RESET")}
         </Button>
         
         {showAnswer ? (
           <Button onClick={handleNextWord}>
-            Suivant
+            {t("QUIZ.NEXT_WORD")}
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         ) : (
@@ -473,7 +472,7 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
             onClick={handleSubmit} 
             disabled={!selectedOption}
           >
-            Vérifier
+            {t("QUIZ.CHECK")}
           </Button>
         )}
       </div>
