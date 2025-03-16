@@ -19,7 +19,8 @@ interface QuizModeProps {
 }
 
 export function SoundQuiz({ title, sounds }: SoundQuizProps) {
-  const [quizMode, setQuizMode] = useState<"writing" | "mcq">("writing");
+  const { t } = useTranslation();
+  const [quizMode, setQuizMode] = useState<"writing" | "mcq">("mcq");
   
   return (
     <Card className="w-full">
@@ -30,16 +31,16 @@ export function SoundQuiz({ title, sounds }: SoundQuizProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="writing" onValueChange={(value) => setQuizMode(value as "writing" | "mcq")}>
+        <Tabs value={quizMode} onValueChange={(value) => setQuizMode(value as "writing" | "mcq")}>
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="writing">Mode écriture</TabsTrigger>
-            <TabsTrigger value="mcq">Mode QCM</TabsTrigger>
+            <TabsTrigger value="mcq">{t("QUIZ.MCQ_MODE")}</TabsTrigger>
+            <TabsTrigger value="writing">{t("QUIZ.WRITING_MODE")}</TabsTrigger>
           </TabsList>
-          <TabsContent value="writing">
-            <WritingModeQuiz sounds={sounds} />
-          </TabsContent>
           <TabsContent value="mcq">
             <MCQModeQuiz sounds={sounds} />
+          </TabsContent>
+          <TabsContent value="writing">
+            <WritingModeQuiz sounds={sounds} />
           </TabsContent>
         </Tabs>
       </CardContent>

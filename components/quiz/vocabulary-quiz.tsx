@@ -23,7 +23,7 @@ interface VocabularyQuizProps {
 }
 
 export function VocabularyQuiz({ title, words, direction = "fr-to-ar" }: VocabularyQuizProps) {
-  const [quizMode, setQuizMode] = useState<"writing" | "mcq">("writing");
+  const [quizMode, setQuizMode] = useState<"writing" | "mcq">("mcq");
   const { t } = useTranslation();
   return (
     <Card className="w-full">
@@ -34,16 +34,16 @@ export function VocabularyQuiz({ title, words, direction = "fr-to-ar" }: Vocabul
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="writing" onValueChange={(value) => setQuizMode(value as "writing" | "mcq")}>
+        <Tabs value={quizMode} onValueChange={(value) => setQuizMode(value as "writing" | "mcq")}>
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="writing">{t("QUIZ.WRITING_MODE")}</TabsTrigger>
             <TabsTrigger value="mcq">{t("QUIZ.MCQ_MODE")}</TabsTrigger>
+            <TabsTrigger value="writing">{t("QUIZ.WRITING_MODE")}</TabsTrigger>
           </TabsList>
-          <TabsContent value="writing">
-            <WritingModeQuiz words={words} direction={direction} />
-          </TabsContent>
           <TabsContent value="mcq">
             <MCQModeQuiz words={words} direction={direction} />
+          </TabsContent>
+          <TabsContent value="writing">
+            <WritingModeQuiz words={words} direction={direction} />
           </TabsContent>
         </Tabs>
       </CardContent>
