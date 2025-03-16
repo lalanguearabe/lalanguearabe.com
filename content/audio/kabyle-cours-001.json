@@ -1,0 +1,221 @@
+{
+  "title": "Sons - Leçon 1",
+  "sounds": [
+    {
+      "french": "Azul",
+      "arabic": "ⴰⵣⵓⵍ",
+      "audio": "azul.mp3"
+    },
+    {
+      "french": "tanmirt",
+      "arabic": "ⵜⴰⵏⵎⵉⵔⵜ",
+      "audio": "tanmirt.mp3"
+    },
+    {
+      "french": "ih",
+      "arabic": "ⵉⵂ",
+      "audio": "ih.mp3"
+    },
+    {
+      "french": "uhu",
+      "arabic": "ⵓⵂⵓ",
+      "audio": "uhu.mp3"
+    },
+    {
+      "french": "Amek illa?",
+      "arabic": "ⴰⵎⴽ ⵉⵍⵍⴰ",
+      "audio": "amek_illa.mp3"
+    },
+    {
+      "french": "Ɛ",
+      "arabic": "ⵄ/—",
+      "audio": "—.mp3"
+    },
+    {
+      "french": "Ɣ",
+      "arabic": "ⵗ",
+      "audio": "ⵗ.mp3"
+    },
+    {
+      "french": "Q",
+      "arabic": "ⵈ",
+      "audio": "ⵈ.mp3"
+    },
+    {
+      "french": "C",
+      "arabic": "ⵛ",
+      "audio": "ⵛ.mp3"
+    },
+    {
+      "french": "B",
+      "arabic": "ⵀ",
+      "audio": "ⵀ.mp3"
+    },
+    {
+      "french": "N",
+      "arabic": "ⵏ",
+      "audio": "ⵏ.mp3"
+    },
+    {
+      "french": "Ẓ",
+      "arabic": "ⵌ",
+      "audio": "ⵌ.mp3"
+    },
+    {
+      "french": "Ṭ",
+      "arabic": "ⵟ",
+      "audio": "ⵟ.mp3"
+    },
+    {
+      "french": "Ṣ",
+      "arabic": "ⵙ",
+      "audio": "ⵙ_2.mp3"
+    },
+    {
+      "french": "Ḍ",
+      "arabic": "ⴹ",
+      "audio": "ⴹ.mp3"
+    },
+    {
+      "french": "Ǧ",
+      "arabic": "ⴶ",
+      "audio": "ⴶ.mp3"
+    },
+    {
+      "french": "Ḥ",
+      "arabic": "ⵃ",
+      "audio": "ⵃ.mp3"
+    },
+    {
+      "french": "Č",
+      "arabic": "ⵞ",
+      "audio": "ⵞ.mp3"
+    },
+    {
+      "french": "TT",
+      "arabic": "ⵝ",
+      "audio": "ⵝ.mp3"
+    },
+    {
+      "french": "D",
+      "arabic": "ⴷ",
+      "audio": "ⴷ.mp3"
+    },
+    {
+      "french": "Dh",
+      "arabic": "ⴷ",
+      "audio": "ⴷ_02.mp3"
+    },
+
+    {
+      "french": "Ɛ",
+      "arabic": "ⵄ",
+      "audio": "—.mp3"
+    },
+    {
+      "french": "Ɣ",
+      "arabic": "ⵗ",
+      "audio": "ⵗ.mp3"
+    },
+    {
+      "french": "Q",
+      "arabic": "ⵈ",
+      "audio": "ⵈ.mp3"
+    },
+    {
+      "french": "Z",
+      "arabic": "ⵣ",
+      "audio": "ⵣ.mp3"
+    },
+    {
+      "french": "R",
+      "arabic": "ⵔ",
+      "audio": "ⵔ.mp3"
+    },
+    {
+      "french": "T",
+      "arabic": "ⵜ",
+      "audio": "ⵜ.mp3"
+    },
+    {
+      "french": "S",
+      "arabic": "ⵙ",
+      "audio": "ⵙ.mp3"
+    },
+    {
+      "french": "F",
+      "arabic": "ⴼ",
+      "audio": "ⴼ.mp3"
+    },
+    {
+      "french": "G",
+      "arabic": "ⴳ",
+      "audio": "ⴳ.mp3"
+    },
+    {
+      "french": "H",
+      "arabic": "ⵂ",
+      "audio": "ⵂ.mp3"
+    },
+    {
+      "french": "J",
+      "arabic": "ⵊ",
+      "audio": "ⵊ.mp3"
+    },
+    {
+      "french": "K",
+      "arabic": "ⴾ",
+      "audio": "ⴾ.mp3"
+    },
+    {
+      "french": "L",
+      "arabic": "ⵍ",
+      "audio": "ⵍ.mp3"
+    },
+    {
+      "french": "M",
+      "arabic": "ⵎ",
+      "audio": "ⵎ.mp3"
+    },
+    {
+      "french": "W",
+      "arabic": "ⵓ",
+      "audio": "ⵓ.mp3"
+    },
+    {
+      "french": "X",
+      "arabic": "ⵆ",
+      "audio": "ⵆ.mp3"
+    },
+    {
+      "french": "C",
+      "arabic": "ⵛ",
+      "audio": "ⵛ.mp3"
+    },
+    {
+      "french": "B",
+      "arabic": "ⵀ",
+      "audio": "ⵀ.mp3"
+    },
+    {
+      "french": "N",
+      "arabic": "ⵏ",
+      "audio": "ⵏ.mp3"
+    },
+    {
+      "french": "A",
+      "arabic": "ⴰ",
+      "audio": "ⴰ.mp3"
+    },
+    {
+      "french": "I",
+      "arabic": "ⵉ",
+      "audio": "ⵉ.mp3"
+    },
+    {
+      "french": "U",
+      "arabic": "ⵓ",
+      "audio": "ⵓ.mp3"
+    }
+  ]
+}

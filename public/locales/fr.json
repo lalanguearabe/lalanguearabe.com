@@ -1,22 +1,22 @@
 {
     "HEADER": {
-        "SITE_NAME": "lalanguearabe.com",
+        "SITE_NAME": "lalanguekabyle.com",
         "COURSES": "Cours",
         "ABOUT": "À propos",
         "CONTACT": "Contact"
     },
     "FOOTER": {
-        "SITE_NAME": "lalanguearabe.com",
+        "SITE_NAME": "lalanguekabyle.com",
         "COURSES": "Cours",
         "ABOUT": "À propos",
         "CONTACT": "Contact",
-        "COPYRIGHT": "lalanguearabe.com. Tous droits réservés.",
-        "GITHUB_LINK": "https://github.com/lalanguearabe/lalanguearabe.com"
+        "COPYRIGHT": "lalanguekabyle.com. Tous droits réservés.",
+        "GITHUB_LINK": "https://github.com/lalanguearabe/lalanguearabe.com/tree/lalanguekabyle"
     },
     "MAIN": {
         "HERO": {
-            "TITLE": "Apprenez l'arabe à votre rythme avec lalanguearabe.com",
-            "DESCRIPTION": "Découvrez notre méthode progressive d'apprentissage de l'arabe.",
+            "TITLE": "Apprenez le kabyle à votre rythme avec lalanguekabyle.com",
+            "DESCRIPTION": "Découvrez notre méthode progressive d'apprentissage du kabyle.",
             "CTA": "Voir tous les cours"
         },
         "COURSES": {
@@ -26,7 +26,7 @@
         },
         "WHY_CHOOSE_US": {
             "TITLE": "Pourquoi choisir notre méthode ?",
-            "DESCRIPTION": "Notre approche d'apprentissage de l'arabe est entièrement gratuite et conçue pour rendre cette langue accessible au plus grand nombre.",
+            "DESCRIPTION": "Notre approche d'apprentissage du kabyle est entièrement gratuite et conçue pour rendre cette langue accessible au plus grand nombre.",
             "FEATURES": {
                 "NATURAL_PROGRESSION": "Progression naturelle",
                 "NATURAL_PROGRESSION_DESCRIPTION": "Notre méthode suit une progression naturelle qui respecte la façon dont les langues sont naturellement acquises.",
@@ -39,7 +39,7 @@
     },
     "COURSES": {
         "TITLE": "Tous les cours",
-        "DESCRIPTION": "Découvrez tous nos cours d'arabe disponibles sur lalanguearabe.com"
+        "DESCRIPTION": "Découvrez tous nos cours de kabyle disponibles sur lalanguekabyle.com"
     },
     "CONTACT": {
         "TITLE": "Contactez-nous",
@@ -61,15 +61,15 @@
         "CTA": "Retour à l'accueil"
     },
     "META": {
-        "TITLE": "lalanguearabe.com - Plateforme d'apprentissage de l'arabe",
-        "DESCRIPTION": "Découvrez notre méthode progressive d'apprentissage de l'arabe."
+        "TITLE": "lalanguekabyle.com - Plateforme d'apprentissage du kabyle",
+        "DESCRIPTION": "Découvrez notre méthode progressive d'apprentissage du kabyle."
     },
     "DETAILS": {
         "CONTENT": "Contenu",
         "VOCABULARY": "Vocabulaire",
         "QUIZ": "Quiz",
-        "ARABIC_TO_FRENCH": "Arabe vers Français",
-        "FRENCH_TO_ARABIC": "Français vers Arabe",
+        "KABYLE_TO_FRENCH": "Kabyle vers Français",
+        "FRENCH_TO_KABYLE": "Français vers Kabyle",
         "SOUND": "Son",
         "VOCABULARY_QUIZ": "Quiz de vocabulaire",
         "SOUND_QUIZ": "Quiz de son",

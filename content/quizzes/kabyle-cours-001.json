@@ -1,0 +1,115 @@
+{
+  "title": "Quiz sur l'alphabet Tifinagh",
+  "questions": [
+    {
+      "id": "kabyle-q1",
+      "question": "Combien de systèmes d'écriture sont utilisés pour la langue kabyle?",
+      "options": [
+        { "id": "kabyle-q1-a", "text": "Un seul: le Tifinagh" },
+        { "id": "kabyle-q1-b", "text": "Deux: le Tifinagh et l'alphabet latin" },
+        { "id": "kabyle-q1-c", "text": "Trois: le Tifinagh, l'alphabet latin et l'alphabet arabe" },
+        { "id": "kabyle-q1-d", "text": "Quatre: le Tifinagh, l'alphabet latin, l'alphabet arabe et le cyrillique" }
+      ],
+      "correctOptionId": "kabyle-q1-c"
+    },
+    {
+      "id": "kabyle-q2",
+      "question": "Quelle est la correspondance correcte pour la lettre ⴰ?",
+      "options": [
+        { "id": "kabyle-q2-a", "text": "I en latin, ي en arabe" },
+        { "id": "kabyle-q2-b", "text": "A en latin, ا en arabe" },
+        { "id": "kabyle-q2-c", "text": "U en latin, و en arabe" },
+        { "id": "kabyle-q2-d", "text": "E en latin, ه en arabe" }
+      ],
+      "correctOptionId": "kabyle-q2-b"
+    },
+    {
+      "id": "kabyle-q3",
+      "question": "Comment se prononce la lettre ⵓ en Tifinagh?",
+      "options": [
+        { "id": "kabyle-q3-a", "text": "Comme dans 'Yaourt' (français)" },
+        { "id": "kabyle-q3-b", "text": "Comme dans 'Alif' (arabe)" },
+        { "id": "kabyle-q3-c", "text": "Comme dans 'What' (anglais)" },
+        { "id": "kabyle-q3-d", "text": "Comme dans 'Zayn' (arabe)" }
+      ],
+      "correctOptionId": "kabyle-q3-c"
+    },
+    {
+      "id": "kabyle-q4",
+      "question": "Quelle lettre Tifinagh correspond à 'Z' en latin et 'ز' en arabe?",
+      "options": [
+        { "id": "kabyle-q4-a", "text": "ⵣ" },
+        { "id": "kabyle-q4-b", "text": "ⵔ" },
+        { "id": "kabyle-q4-c", "text": "ⵜ" },
+        { "id": "kabyle-q4-d", "text": "ⵙ" }
+      ],
+      "correctOptionId": "kabyle-q4-a"
+    },
+    {
+      "id": "kabyle-q5",
+      "question": "Quelle est la prononciation de la lettre ⵛ en Tifinagh?",
+      "options": [
+        { "id": "kabyle-q5-a", "text": "Comme dans 'Bateau' (français)" },
+        { "id": "kabyle-q5-b", "text": "Comme dans 'Chanter' (français)" },
+        { "id": "kabyle-q5-c", "text": "Comme dans 'Nature' (français)" },
+        { "id": "kabyle-q5-d", "text": "Comme dans 'Ẓẓay' (berbère)" }
+      ],
+      "correctOptionId": "kabyle-q5-b"
+    },
+    {
+      "id": "kabyle-q6",
+      "question": "Que signifie le mot 'ⴰⵣⵓⵍ' en kabyle?",
+      "options": [
+        { "id": "kabyle-q6-a", "text": "Bonjour" },
+        { "id": "kabyle-q6-b", "text": "Merci" },
+        { "id": "kabyle-q6-c", "text": "Oui" },
+        { "id": "kabyle-q6-d", "text": "Non" }
+      ],
+      "correctOptionId": "kabyle-q6-a"
+    },
+    {
+      "id": "kabyle-q7",
+      "question": "Quelle lettre Tifinagh correspond à 'Ḥ' en latin et 'ح' en arabe?",
+      "options": [
+        { "id": "kabyle-q7-a", "text": "ⵂ" },
+        { "id": "kabyle-q7-b", "text": "ⵃ" },
+        { "id": "kabyle-q7-c", "text": "ⵄ" },
+        { "id": "kabyle-q7-d", "text": "ⵆ" }
+      ],
+      "correctOptionId": "kabyle-q7-b"
+    },
+    {
+      "id": "kabyle-q8",
+      "question": "Comment dit-on 'Merci' en kabyle (Tifinagh)?",
+      "options": [
+        { "id": "kabyle-q8-a", "text": "ⴰⵣⵓⵍ" },
+        { "id": "kabyle-q8-b", "text": "ⵜⴰⵏⵎⵉⵔⵜ" },
+        { "id": "kabyle-q8-c", "text": "ⵉⵂ" },
+        { "id": "kabyle-q8-d", "text": "ⵓⵂⵓ" }
+      ],
+      "correctOptionId": "kabyle-q8-b"
+    },
+    {
+      "id": "kabyle-q9",
+      "question": "Quelle catégorie de consonnes comprend les sons ⵟ, ⵙ (Ṣ) et ⴹ?",
+      "options": [
+        { "id": "kabyle-q9-a", "text": "Consonnes principales" },
+        { "id": "kabyle-q9-b", "text": "Consonnes spécifiques" },
+        { "id": "kabyle-q9-c", "text": "Voyelles" },
+        { "id": "kabyle-q9-d", "text": "Lettres latines" }
+      ],
+      "correctOptionId": "kabyle-q9-b"
+    },
+    {
+      "id": "kabyle-q10",
+      "question": "Comment dit-on 'Comment ça va?' en kabyle (Tifinagh)?",
+      "options": [
+        { "id": "kabyle-q10-a", "text": "ⴰⵎⴽ ⵉⵍⵍⴰ" },
+        { "id": "kabyle-q10-b", "text": "ⵜⴰⵏⵎⵉⵔⵜ" },
+        { "id": "kabyle-q10-c", "text": "ⵉⵂ" },
+        { "id": "kabyle-q10-d", "text": "ⵓⵂⵓ" }
+      ],
+      "correctOptionId": "kabyle-q10-a"
+    }
+  ]
+}
