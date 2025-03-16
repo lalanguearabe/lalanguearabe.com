@@ -336,7 +336,7 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
               <div className="relative flex items-center">
                 <RadioGroupItem
                   value={option}
-                  id={`option-${index}`}
+                  id={`option-${direction}-${index}`}
                   className={cn(
                     showAnswer && option === answer && "border-green-500 text-green-500",
                     showAnswer && selectedOption === option && option !== answer && "border-red-500 text-red-500"
@@ -344,7 +344,7 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
                 />
               </div>
               <Label
-                htmlFor={`option-${index}`}
+                htmlFor={`option-${direction}-${index}`}
                 className={cn(
                   "text-base",
                   showAnswer && option === answer && "text-green-700 dark:text-green-500 font-medium",
