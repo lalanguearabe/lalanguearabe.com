@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CheckCircle, XCircle, RotateCcw, ArrowRight } from "lucide-react";
+import { RotateCcw, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -171,11 +171,6 @@ function WritingModeQuiz({ sounds }: QuizModeProps) {
           isCorrect ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400"
         )}>
           <div className="flex items-center gap-2">
-            {isCorrect ? (
-              <CheckCircle className="h-5 w-5" />
-            ) : (
-              <XCircle className="h-5 w-5" />
-            )}
             <p className="font-medium">
               {isCorrect ? "Correct!" : "Incorrect!"}
             </p>
@@ -345,12 +340,6 @@ function MCQModeQuiz({ sounds }: QuizModeProps) {
                     showAnswer && selectedOption === option && option !== answer && "border-red-500 text-red-500"
                   )}
                 />
-                {showAnswer && option === answer && (
-                  <CheckCircle className="h-4 w-4 text-green-500 absolute -right-6" />
-                )}
-                {showAnswer && selectedOption === option && option !== answer && (
-                  <XCircle className="h-4 w-4 text-red-500 absolute -right-6" />
-                )}
               </div>
               <Label
                 htmlFor={`option-${index}`}
@@ -374,11 +363,6 @@ function MCQModeQuiz({ sounds }: QuizModeProps) {
           isCorrect ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400"
         )}>
           <div className="flex items-center gap-2">
-            {isCorrect ? (
-              <CheckCircle className="h-5 w-5" />
-            ) : (
-              <XCircle className="h-5 w-5" />
-            )}
             <p className="font-medium">
               {isCorrect ? t("QUIZ.CORRECT") : t("QUIZ.INCORRECT")}
             </p>

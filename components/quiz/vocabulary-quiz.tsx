@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CheckCircle, XCircle, RotateCcw, ArrowRight, Volume2 } from "lucide-react";
+import { RotateCcw, ArrowRight, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -14,7 +14,6 @@ import { useTranslation } from "react-i18next";
 export interface VocabularyWord {
   french: string;
   arabic: string;
-  audio?: string;
 }
 
 interface VocabularyQuizProps {
@@ -57,56 +56,6 @@ interface QuizModeProps {
   direction: "fr-to-ar" | "ar-to-fr";
 }
 
-function AudioButton({ audioUrl, word }: { audioUrl?: string; word: string }) {
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
-    if (!audioUrl) return;
-    
-    const audioElement = new Audio(audioUrl);
-    setAudio(audioElement);
-
-    audioElement.addEventListener('ended', () => {
-      setIsPlaying(false);
-    });
-
-    return () => {
-      audioElement.pause();
-      audioElement.removeEventListener('ended', () => {
-        setIsPlaying(false);
-      });
-    };
-  }, [audioUrl]);
-
-  if (!audioUrl) return null;
-
-  const togglePlay = () => {
-    if (!audio) return;
-
-    if (isPlaying) {
-      audio.pause();
-      audio.currentTime = 0;
-      setIsPlaying(false);
-    } else {
-      audio.play();
-      setIsPlaying(true);
-    }
-  };
-
-  return (
-    <Button 
-      variant="ghost" 
-      size="sm" 
-      className="h-6 w-6 p-0 rounded-full" 
-      onClick={togglePlay}
-      title={`Écouter la prononciation de "${word}"`}
-    >
-      <Volume2 className={cn("h-4 w-4", isPlaying ? "text-primary animate-pulse" : "")} />
-      <span className="sr-only">Écouter</span>
-    </Button>
-  );
-}
 
 function WritingModeQuiz({ words, direction }: QuizModeProps) {
   const { t } = useTranslation();
@@ -227,11 +176,6 @@ function WritingModeQuiz({ words, direction }: QuizModeProps) {
           isCorrect ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400"
         )}>
           <div className="flex items-center gap-2">
-            {isCorrect ? (
-              <CheckCircle className="h-5 w-5" />
-            ) : (
-              <XCircle className="h-5 w-5" />
-            )}
             <p className="font-medium">
               {isCorrect ? t("QUIZ.CORRECT") : t("QUIZ.INCORRECT")}
             </p>
@@ -239,9 +183,6 @@ function WritingModeQuiz({ words, direction }: QuizModeProps) {
           {!isCorrect && (
             <p className="mt-1 flex items-center gap-2">
               La réponse correcte est: <span className={cn("font-bold", direction === "fr-to-ar" && "arabic-text")}>{answer}</span>
-              {direction === "fr-to-ar" && currentWord.audio && (
-                <AudioButton audioUrl={currentWord.audio} word={currentWord.arabic} />
-              )}
             </p>
           )}
         </div>
@@ -370,9 +311,6 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
   const questionLabel = direction === "fr-to-ar" ? "Français" : "Arabe";
   const answerLabel = direction === "fr-to-ar" ? "Arabe" : "Français";
   
-  // Déterminer quelle partie a potentiellement un fichier audio
-  const audioUrl = direction === "fr-to-ar" ? currentWord.audio : undefined;
-
   return (
     <div className="space-y-4 mt-4">
       <div className="space-y-2">
@@ -404,12 +342,6 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
                     showAnswer && selectedOption === option && option !== answer && "border-red-500 text-red-500"
                   )}
                 />
-                {showAnswer && option === answer && (
-                  <CheckCircle className="h-4 w-4 text-green-500 absolute -right-6" />
-                )}
-                {showAnswer && selectedOption === option && option !== answer && (
-                  <XCircle className="h-4 w-4 text-red-500 absolute -right-6" />
-                )}
               </div>
               <Label
                 htmlFor={`option-${index}`}
@@ -422,9 +354,6 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
               >
                 {option}
               </Label>
-              {showAnswer && option === answer && direction === "fr-to-ar" && currentWord.audio && (
-                <AudioButton audioUrl={currentWord.audio} word={option} />
-              )}
             </div>
           ))}
         </RadioGroup>
@@ -436,11 +365,6 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
           isCorrect ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400"
         )}>
           <div className="flex items-center gap-2">
-            {isCorrect ? (
-              <CheckCircle className="h-5 w-5" />
-            ) : (
-              <XCircle className="h-5 w-5" />
-            )}
             <p className="font-medium">
               {isCorrect ? t("QUIZ.CORRECT") : t("QUIZ.INCORRECT")}
             </p>
@@ -448,9 +372,6 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
           {!isCorrect && (
             <p className="mt-1 flex items-center gap-2">
               La réponse correcte est: <span className="font-bold">{answer}</span>
-              {direction === "fr-to-ar" && currentWord.audio && (
-                <AudioButton audioUrl={currentWord.audio} word={currentWord.arabic} />
-              )}
             </p>
           )}
         </div>
