@@ -407,7 +407,7 @@ function MCQModeQuiz({ sounds }: QuizModeProps) {
             onClick={handleSubmit} 
             disabled={!selectedOption}
           >
-            {t("QUIZ.CHECK")}
+            {t("QUIZ.SHOW_ANSWER")}
           </Button>
         )}
       </div>

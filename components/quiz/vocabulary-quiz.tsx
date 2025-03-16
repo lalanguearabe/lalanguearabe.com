@@ -472,7 +472,7 @@ function MCQModeQuiz({ words, direction }: QuizModeProps) {
             onClick={handleSubmit} 
             disabled={!selectedOption}
           >
-            {t("QUIZ.CHECK")}
+            {t("QUIZ.SHOW_ANSWER")}
           </Button>
         )}
       </div>
